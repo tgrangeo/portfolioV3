@@ -56,7 +56,7 @@ Column _mainRow() {
       Text.rich(
         TextSpan(
           text:
-              "Frontend Developer crafting digital experiences at the intersection of ",
+              "Mobile Developer crafting digital experiences at the intersection of ",
           style: TextStyle(color: greyText, fontSize: 24),
           children: [
             TextSpan(
@@ -92,7 +92,7 @@ Column _secondRow() {
       ),
       const SizedBox(height: 12),
       Text(
-        'Frontend Developer',
+        'Flutter Developer',
         style: TextStyle(
           color: whiteText,
           fontSize: 20,
@@ -100,9 +100,9 @@ Column _secondRow() {
         ),
       ),
       const SizedBox(height: 4),
-      Text('@ Hububble', style: TextStyle(color: greyText, fontSize: 16)),
+      Text('@ Xefi', style: TextStyle(color: greyText, fontSize: 16)),
       const SizedBox(height: 8),
-      Text('2021 — Present', style: TextStyle(color: greyText, fontSize: 12)),
+      Text('2025 — Present', style: TextStyle(color: greyText, fontSize: 12)),
       const SizedBox(height: 28),
       Text(
         'FOCUS',
@@ -113,11 +113,10 @@ Column _secondRow() {
         spacing: 10,
         runSpacing: 10,
         children: [
-          Tag('HubL'),
-          Tag('React'),
-          Tag('TypeScript'),
-          Tag('HubSpot CMS'),
-          Tag('Node.js'),
+          Tag('Flutter'),
+          Tag('Native'),
+          Tag('Scripting'),
+          Tag('DevX'),
         ],
       ),
     ],

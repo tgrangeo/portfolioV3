@@ -6,25 +6,27 @@ import 'package:portfoliov3/view/common/tag.dart';
 final List<Job> jobList = [
   Job(
     date: 2025,
-    title: "Mobile Developper",
+    title: "Mobile Developer",
     workplace: "Xefi",
-    description: "building some app",
-    techs: ["Flutter"],
+    description:
+        "Led the development of cross-platform business applications with Flutter, delivering advanced features and high-performance UI/UX. Worked at an advanced level on native integrations (Swift, Kotlin) to implement home widgets, push notifications, and background services. Ensured clean architecture, maintainability, and robust CI/CD pipelines for scalable delivery.",
+    techs: ["Flutter", "Dart", "GetX", "Swift", "Kotlin"],
   ),
   Job(
     date: 2024,
-    title: "Mobile Developper",
+    title: "Mobile Developer",
     workplace: "Witekio",
-    description: "r&d bluettoh",
-    techs: ["Angular", "Ionic"],
+    description:
+        "Worked in the R&D team on Bluetooth connectivity and IoT solutions. Prototyped mobile applications using Angular and Ionic, ensuring seamless communication between embedded systems and mobile platforms.",
+    techs: ["Angular", "Ionic", "TypeScript", "Bluetooth LE"],
   ),
   Job(
     date: 2019,
     title: "Student",
     workplace: "42 Lyon",
     description:
-        "Studied at the 42 Lyon developper school, learning some basics and advanced foundamentals about programming",
-    techs: ["C", "C++"],
+        "Studied at the 42 Lyon developer school. Built strong foundations in algorithmics, low-level programming, and software design. Worked intensively with peers on real-world projects, applying problem-solving and self-learning skills.",
+    techs: ["C", "C++", "Algorithms", "System Programming"],
   ),
 ];
 
@@ -115,16 +117,13 @@ Widget _jobItem(Job job) {
         );
       }
 
-      return SizedBox(
-        height: 150,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(flex: 1, child: dateWidget),
-            Expanded(flex: 6, child: infoWidget),
-            Expanded(flex: 2, child: techsWidget),
-          ],
-        ),
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(flex: 1, child: dateWidget),
+          Expanded(flex: 6, child: infoWidget),
+          Expanded(flex: 2, child: techsWidget),
+        ],
       );
     },
   );
