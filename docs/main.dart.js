@@ -64638,7 +64638,7 @@ $S:462}
 A.YU.prototype={
 QZ(a){$.qO().m(0,this,a)}}
 A.Do.prototype={
-X(a){return new A.ui(B.Au,"Flutter Demo",$.ao_(),!1,new A.Yi(),null)}}
+X(a){return new A.ui(B.Au,"Thomas Grangeon",$.ao_(),!1,new A.Yi(),null)}}
 A.Yi.prototype={
 IL(a,b,c){return b},
 BU(a){return B.xV}}
