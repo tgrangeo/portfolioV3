@@ -9,7 +9,7 @@ final List<Job> jobList = [
     title: "Mobile Developer",
     workplace: "Xefi",
     description:
-        "Led the development of cross-platform business applications with Flutter, delivering advanced features and high-performance UI/UX. Worked at an advanced level on native integrations (Swift, Kotlin) to implement home widgets, push notifications, and background services. Ensured clean architecture, maintainability, and robust CI/CD pipelines for scalable delivery.",
+        "Contributing the development of cross-platform business applications with Flutter, delivering advanced features and high-performance UI/UX. Worked at an advanced level on native integrations (Swift, Kotlin) to implement home widgets, push notifications, and background services. Ensured clean architecture, maintainability, and robust CI/CD pipelines for scalable delivery.",
     techs: ["Flutter", "Dart", "GetX", "Swift", "Kotlin"],
   ),
   Job(
