@@ -137,7 +137,9 @@ class _SectionItem {
 Widget _footer(BuildContext context) {
   return Center(
     child: SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.4,
+      width: MediaQuery.sizeOf(context).width > 700
+          ? MediaQuery.sizeOf(context).width * 0.4
+          : MediaQuery.sizeOf(context).width * 0.9,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

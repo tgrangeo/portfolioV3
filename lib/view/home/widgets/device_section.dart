@@ -87,64 +87,79 @@ class _DeviceSectionState extends State<DeviceSection> {
 
     return Center(
       child: SizedBox(
-        width: screenWidth * 0.4,
+        width: screenWidth > 700 ? screenWidth * 0.4 : screenWidth * 0.9,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("Try out my projects", style: TextStyle(fontSize: 32)),
             const SizedBox(height: 20),
             SizedBox(
-              height: screenHeight * 0.8,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SingleChildScrollView(
-                    child: Column(
+              height: screenWidth > 700 ? screenHeight * 0.8 : null,
+              child: screenWidth > 700
+                  ? Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 64),
-                        Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children: urls.map((e) {
-                            final selected = _currentUrl == e.url;
-                            return OutlinedButton(
-                              onPressed: () => _load(e.url),
-                              style: OutlinedButton.styleFrom(
-                                side: BorderSide(
-                                  color: selected
-                                      ? Theme.of(context).colorScheme.primary
-                                      : Theme.of(
-                                          context,
-                                        ).colorScheme.outlineVariant,
-                                ),
-                              ),
-                              child: Text(e.label),
-                            );
-                          }).toList(),
-                        ),
-                        const SizedBox(height: 16),
-                        Text(_selected.label, style: TextStyle(fontSize: 24)),
-                        const SizedBox(height: 6),
-                        SizedBox(
-                          width: screenWidth * 0.18,
-                          child: Text(
-                            _selected.description,
-                            style: TextStyle(fontSize: 18),
-                            softWrap: true,
-                          ),
-                        ),
+                        _selectorAndDesciption(),
+                        const SizedBox(width: 32),
+                        Center(child: _deviceFrame()),
+                      ],
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _selectorAndDesciption(),
+                        const SizedBox(height: 64),
+                        Center(child: _deviceFrame()),
                       ],
                     ),
-                  ),
-                  const SizedBox(width: 32),
-                  Center(child: _deviceFrame()),
-                ],
-              ),
             ),
-            SizedBox(height: screenHeight * 0.2),
+            SizedBox(
+              height:  screenHeight * 0.2,
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _selectorAndDesciption() {
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    return SingleChildScrollView(
+      physics: NeverScrollableScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 64),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: urls.map((e) {
+              final selected = _currentUrl == e.url;
+              return OutlinedButton(
+                onPressed: () => _load(e.url),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    color: selected
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.outlineVariant,
+                  ),
+                ),
+                child: Text(e.label),
+              );
+            }).toList(),
+          ),
+          const SizedBox(height: 16),
+          Text(_selected.label, style: TextStyle(fontSize: 24)),
+          const SizedBox(height: 6),
+          SizedBox(
+            width: screenWidth > 700 ? screenWidth * 0.18 : screenWidth * 0.9,
+            child: Text(
+              _selected.description,
+              style: TextStyle(fontSize: 18),
+              softWrap: true,
+            ),
+          ),
+        ],
       ),
     );
   }

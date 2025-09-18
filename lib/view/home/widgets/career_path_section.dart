@@ -50,6 +50,7 @@ class CareerPathSection extends StatelessWidget {
               const SizedBox(height: 64),
               Expanded(
                 child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: jobList.length,
                   separatorBuilder: (context, index) {
                     return Column(
